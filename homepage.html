@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Shelf Hockey</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <img src="top_shelf_logo.png" alt="Top Shelf Hockey Logo" class="logo">
+    <ul>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+</header>
+
+<!-- MAIN CONTENT -->
+<main class="content">
+    <!-- Left column -->
+    <section class="left-panel">
+        <h2>Featured Images</h2>
+        <img src="the_guys.jpg" alt="Owners" class="featured-img">
+        <img src="new_gear.jpg" alt="Hockey Gear" class="featured-img">
+    </section>
+
+    <!-- Right column -->
+    <!-- Right column (slideshow) -->
+    <aside class="right-panel">
+        <h2>Updates</h2>
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <img src="update1.jpg" alt="Store Update 1">
+            </div>
+            <div class="slide fade">
+                <img src="update2.jpg" alt="Store Update 2">
+            </div>
+            <div class="slide fade">
+                <img src="update3.jpg" alt="Store Update 3">
+            </div>
+
+            <!-- Optional navigation dots -->
+            <div class="dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </aside>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>Welcome to Top Shelf Hockey — your source for elite gear and expert service.</p>
+</footer>
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        const slides = document.querySelectorAll(".slide");
+        const dots = document.querySelectorAll(".dot");
+
+        slides.forEach(slide => (slide.style.display = "none"));
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1 }
+
+        slides[slideIndex - 1].style.display = "block";
+
+        dots.forEach(dot => dot.classList.remove("active"));
+        dots[slideIndex - 1].classList.add("active");
+
+        setTimeout(showSlides, 4000); // Change image every 4 seconds
+    }
+</script>
+
+</body>
+</html>

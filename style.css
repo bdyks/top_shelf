@@ -1,0 +1,134 @@
+/* NAVBAR LAYOUT */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(90deg, #111 0%, #b5001a 100%);
+    height: 130px;
+    padding: 0 40px;
+    overflow: hidden;
+}
+
+/* BODY FONT */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #111;
+}
+
+/* LOGO STYLE */
+.logo {
+    height: 250px;
+    width: auto;
+    padding: 5px 0;
+    transform: translateY(30px);
+}
+
+/* NAV LINKS */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Add the divider to li, not a */
+.navbar li {
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    padding-right: 25px;
+}
+
+/* Remove divider from last item */
+.navbar li:last-child {
+    border-right: none;
+    padding-right: 0;
+}
+
+/* Link styling */
+.navbar li a {
+    font-family: inherit;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.navbar li a:hover {
+    color: #ff5252;
+}
+
+.featured-img {
+    width: 100%;
+    height: 200px;           /* fixed height — experiment with 180–250px */
+    object-fit: cover;       /* crops instead of stretching */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.left-panel {
+    flex: 1; /* takes up half the space */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* SLIDESHOW STYLES */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slide {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Smooth fade animation */
+.fade {
+    animation: fadeEffect 1s ease-in-out;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+/* Navigation dots */
+.dots {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: white;
+}
