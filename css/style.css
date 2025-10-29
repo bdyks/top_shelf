@@ -1,0 +1,406 @@
+/* BODY FONT */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: white;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(90deg, #111 0%, #b5001a 100%);
+    height: 100px;
+    padding: 0 40px;
+}
+
+.logo {
+    cursor: pointer;
+    height: 200px;
+    width: auto;
+    transform: translateY(25px);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+.navbar li {
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    padding-right: 10px;
+}
+
+.navbar li:last-child {
+    border-right: none;
+    padding-right: 0;
+}
+
+.navbar li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+
+.navbar li a:hover {
+    color: #ff5252;
+}
+
+/* HERO SECTION */
+.hero {
+    position: relative;
+    height: 90vh;
+    background: url("../photos/hockey_stop.jpg") center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero::after {
+    /* dark overlay for contrast */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    z-index: 1;
+}
+
+.hero-content {
+    animation: fadeInUp 1.2s ease forwards;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+}
+
+.btn {
+    background-color: #b5001a;
+    color: white;
+    padding: 12px 28px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #ff3333;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 50, 50, 0.6);
+}
+
+
+/* HOURS TEXT */
+.hours {
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+    z-index: 2;
+    font-size: 1rem;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    background-color: #111;
+    color: white;
+    padding: 15px 0;
+    font-size: 0.9rem;
+}
+
+
+/* --- SERVICES PAGE --- */
+.services-section {
+    padding: 60px 60px;
+    color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fafafa;
+    min-height: 80vh;
+}
+
+.services-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 35px;
+    max-width: 1200px;
+}
+
+.services-image img {
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    margin-left: -60px;
+    margin-top: -40px;
+}
+
+.services-text {
+    flex: 1;
+}
+
+.services-text li:hover {
+    color: #b5001a;
+    transition: color 0.3s ease;
+}
+
+
+.services-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #b5001a;
+}
+
+.services-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.services-text ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.services-text li {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.services-text li::before {
+    content: "• ";
+    color: #b5001a;
+    font-weight: bold;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+    .services-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .services-image img {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+
+/* --- PRODUCTS PAGE --- */
+
+.products-page {
+    background-image: url("../photos/ice_rink.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* optional: parallax effect */
+    color: white;
+}
+
+.products-page::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5); /* translucent overlay */
+    z-index: -1;
+}
+    .products-section {
+    background: transparent;
+    padding: 80px 0;
+}
+
+.products-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 80px auto;
+}
+
+
+/* LEFT COLUMN (category boxes) */
+.product-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    flex: 1;
+}
+
+.products-text {
+    background: #fff;
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.category-box {
+    background-color: #b5001a;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 42px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    text-decoration: none;
+}
+
+.category-box:hover {
+    background-color: #ff3333;
+    transform: scale(1.03);
+    text-decoration: none;
+}
+
+/* RIGHT COLUMN (header text) */
+.products-text {
+    flex: 1;
+    padding-top: 40px;
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.products-text h1 {
+    font-size: 2.5rem;
+    color: #b5001a;
+    margin-bottom: 15px;
+    position: relative; /* needed for the decorative bar */
+}
+
+.products-text h1::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -10px;
+    width: 80px;
+    height: 4px;
+    background-color: #b5001a;
+    border-radius: 2px;
+}
+
+
+.products-text p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+    .products-container {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+
+    .product-categories {
+        width: 100%;
+    }
+}
+/* BRANDS HEADING */
+.brands-heading {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #b5001a;
+    margin: 20px 0 25px;
+}
+
+.brand-logos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.brand-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+}
+
+.brand-row img {
+    max-width: 180px;
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brand-row img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+/* Responsive layout */
+@media (max-width: 900px) {
+    .brand-logos {
+        align-items: center;
+    }
+    .brand-row {
+        flex-direction: column;
+        gap: 25px;
+        align-items: center;
+    }
+}
+
+.products-page .products-text {
+    background: rgba(255, 255, 255, 0.1); /* translucent card */
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(6px);
+}
+
+.products-page .products-text h1 {
+    color: #b5001a;
+}
+
+.products-page .products-text p {
+    color: #f5f5f5;
+}
