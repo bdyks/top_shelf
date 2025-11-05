@@ -2,9 +2,92 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Top Shelf Hockey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <a href="homepage.html"><img src="../photos/top_shelf_logo.png" alt="Top Shelf Hockey Logo" class="logo"></a>
+    <ul>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html" class="active">Contact Us</a></li>
+    </ul>
+</header>
+
+<!-- CONTACT SECTION -->
+<main class="contact-page">
+    <section class="contact-section">
+        <div class="contact-container">
+            <h1>Contact Top Shelf Hockey</h1>
+            <p>
+                Have questions about gear, fittings, or services? We’d love to hear from you.
+                Fill out the form below and we’ll get back to you as soon as possible.
+            </p>
+
+            <form id="contact-form" action="https://formspree.io/f/mwpwdgao" method="POST" class="contact-form">
+                <div class="form-row">
+                    <input type="text" name="first_name" placeholder="First Name" required>
+                    <input type="text" name="last_name" placeholder="Last Name" required>
+                </div>
+
+                <div class="form-row">
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="text" name="phone" placeholder="Phone (optional)">
+                </div>
+
+                <div class="form-row">
+                    <textarea name="message" placeholder="Your message..." rows="6" required></textarea>
+                </div>
+
+                <!-- Success message -->
+                <p id="success-message" class="success-message">Message sent successfully!</p>
+
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>Hours: Mon–Sat 9am–6pm | Closed Sunday</p>
+</footer>
+<script>
+    document.getElementById('contact-form').addEventListener('submit', async function (e) {
+        e.preventDefault(); // prevent page reload
+
+        const form = e.target;
+        const successMsg = document.getElementById('success-message');
+
+        try {
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                form.reset(); // clear fields
+                successMsg.style.display = 'block';
+                // hide after 4 seconds
+                setTimeout(() => {
+                    successMsg.style.display = 'none';
+                }, 4000);
+            } else {
+                alert('There was an issue sending your message. Please try again.');
+            }
+        } catch (error) {
+            alert('Network error. Please try again later.');
+        }
+    });
+</script>
 
 </body>
 </html>
