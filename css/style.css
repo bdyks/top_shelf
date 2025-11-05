@@ -7,7 +7,9 @@ body {
     color: white;
 }
 
-/* NAVBAR */
+/* =========================
+   NAVBAR STYLES
+========================= */
 .navbar {
     display: flex;
     align-items: center;
@@ -142,15 +144,21 @@ body {
 }
 
 
-/* --- SERVICES PAGE --- */
+/* =========================
+   Services Page
+========================= */
 .services-section {
-    padding: 60px 60px;
+    padding: 100px 40px;
     color: #111;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fafafa;
-    min-height: 80vh;
+    background-image: url("../photos/hockey_rink.jpg"); /* replace with your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    position: relative;
 }
 
 .services-container {
@@ -158,16 +166,25 @@ body {
     align-items: flex-start;
     gap: 35px;
     max-width: 1200px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 50px 60px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+    position: relative;
+    z-index: 1;
 }
 
+
 .services-image img {
-    width: 400px;
+    width: 100%;
+    max-width: 420px;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-    margin-left: -60px;
-    margin-top: -40px;
+    margin: 0; /* remove negative margins */
+    object-fit: cover;
 }
+
 
 .services-text {
     flex: 1;
@@ -222,7 +239,9 @@ body {
 }
 
 
-/* --- PRODUCTS PAGE --- */
+/* =========================
+   Products Page
+========================= */
 
 .products-page {
     background-image: url("../photos/ice_rink.jpg");
@@ -405,9 +424,6 @@ body {
     color: #b5001a;
 }
 
-.products-page .products-text p {
-    color: #f5f5f5;
-}
 
 .about-page {
     background-image: url("../photos/hockey_skates.jpg");
@@ -497,17 +513,18 @@ body {
 
 /* ===== CONTACT PAGE ===== */
 .contact-page {
-    background-image: url("../photos/hockey_skates.jpg");
+    background-image: url("../photos/hockey_net.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 100vh;
+    height: 100vh;              /* fills exactly one viewport height */
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 5%;              /* remove top/bottom padding so it fits perfectly */
     position: relative;
-    padding-top: 120px; /* keeps content below fixed navbar */
 }
+
 
 .contact-page::before {
     content: "";
@@ -516,7 +533,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(0, 0, 0, 0.1);
     z-index: 0;
 }
 
@@ -537,6 +554,7 @@ body {
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(5px);
     text-align: center;
+    margin-top: -200px;
 }
 
 .contact-container h1 {
