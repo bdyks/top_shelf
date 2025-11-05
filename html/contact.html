@@ -33,18 +33,26 @@
 
             <form id="contact-form" action="https://formspree.io/f/mwpwdgao" method="POST" class="contact-form">
                 <div class="form-row">
-                    <input type="text" name="first_name" placeholder="First Name" required>
-                    <input type="text" name="last_name" placeholder="Last Name" required>
+                    <label for="first_name" class="visually-hidden">First Name</label>
+                    <input id="first_name" type="text" name="first_name" placeholder="First Name" required>
+
+                    <label for="last_name" class="visually-hidden">Last Name</label>
+                    <input id="last_name" type="text" name="last_name" placeholder="Last Name" required>
                 </div>
 
                 <div class="form-row">
-                    <input type="email" name="email" placeholder="Email" required>
-                    <input type="text" name="phone" placeholder="Phone (optional)">
+                    <label for="email" class="visually-hidden">Email</label>
+                    <input id="email" type="email" name="email" placeholder="Email" required>
+
+                    <label for="phone" class="visually-hidden">Phone</label>
+                    <input id="phone" type="text" name="phone" placeholder="Phone (optional)">
                 </div>
 
                 <div class="form-row">
-                    <textarea name="message" placeholder="Your message..." rows="6" required></textarea>
+                    <label for="message" class="visually-hidden">Message</label>
+                    <textarea id="message" name="message" placeholder="Your message..." rows="6" required></textarea>
                 </div>
+
 
                 <!-- Success message -->
                 <p id="success-message" class="success-message">Message sent successfully!</p>
