@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Top Shelf Hockey</title>
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+            rel="stylesheet"
+    />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
-
 <!-- NAVBAR -->
 <header class="navbar">
-    <a href="homepage.html">
-        <img src="../photos/top_shelf_logo.png" alt="Top Shelf Hockey Logo" class="logo">
+    <a href="homepage.html" class="logo-link">
+        <img
+                src="../photos/top_shelf_logo.png"
+                alt="Top Shelf Hockey Logo"
+                class="logo"
+        />
     </a>
 
-    <ul>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+
+    <ul class="nav-links">
         <li><a href="homepage.html">Home</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="products.html">Products</a></li>
@@ -46,5 +54,27 @@
     <p>© 2025 Top Shelf Hockey. All rights reserved.</p>
 </footer>
 
+<!-- ✅ HAMBURGER MENU SCRIPT -->
+<script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector(".nav-links");
+
+    if (menuToggle && navMenu) {
+        menuToggle.onclick = function () {
+            navMenu.classList.toggle("show");
+            menuToggle.textContent = navMenu.classList.contains("show") ? "✖" : "☰";
+        };
+
+        // Optional: close menu when a link is clicked (mobile UX improvement)
+        navMenu.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+                navMenu.classList.remove("show");
+                menuToggle.textContent = "☰";
+            });
+        });
+    } else {
+        console.error("⚠️ Menu toggle or nav menu not found");
+    }
+</script>
 </body>
 </html>

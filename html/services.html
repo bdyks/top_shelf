@@ -18,7 +18,12 @@
     <a href="homepage.html">
         <img src="../photos/top_shelf_logo.png" alt="Top Shelf Hockey Logo" class="logo">
     </a>
-    <ul>
+
+    <!-- Hamburger Button -->
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+
+    <!-- Nav Links -->
+    <ul class="nav-links">
         <li><a href="homepage.html">Home</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="products.html">Products</a></li>
@@ -44,11 +49,11 @@
                 we’ve got you covered.
             </p>
             <ul>
-                <li> Walk-in Skate Sharpening & Profiling</li>
-                <li> Stick Cutting & Tape Jobs</li>
-                <li> Gear Fitting</li>
-                <li> Equipment Repair</li>
-                <li> Skate Sizing and Baking</li>
+                <li>Walk-in Skate Sharpening & Profiling</li>
+                <li>Stick Cutting & Tape Jobs</li>
+                <li>Gear Fitting</li>
+                <li>Equipment Repair</li>
+                <li>Skate Sizing and Baking</li>
             </ul>
             <p>
                 Visit us in-store or call ahead to schedule your service appointment. We’re here to help you perform your best.
@@ -61,6 +66,19 @@
 <footer class="footer">
     <p>Hours: Mon–Sat 9am–6pm | Closed Sunday</p>
 </footer>
+
+<!-- HAMBURGER MENU SCRIPT -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navMenu = document.querySelector(".nav-links");
+
+        menuToggle.addEventListener("click", () => {
+            navMenu.classList.toggle("show");
+            menuToggle.textContent = navMenu.classList.contains("show") ? "✖" : "☰";
+        });
+    });
+</script>
 
 </body>
 </html>

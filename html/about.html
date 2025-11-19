@@ -11,8 +11,16 @@
 
 <!-- NAVBAR -->
 <header class="navbar">
-    <a href="homepage.html"><img src="../photos/top_shelf_logo.png" alt="Top Shelf Hockey Logo" class="logo"></a>
-    <ul>
+    <a href="homepage.html">
+        <img src="../photos/top_shelf_logo.png" alt="Top Shelf Hockey Logo" class="logo">
+    </a>
+
+    <!-- Hamburger button -->
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+
+    <!-- Nav links -->
+    <ul class="nav-links">
+
         <li><a href="homepage.html">Home</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="products.html">Products</a></li>
@@ -53,6 +61,18 @@
 <footer class="footer">
     <p>Hours: Mon–Sat 9am–6pm | Closed Sunday</p>
 </footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navMenu = document.querySelector(".nav-links");
+
+        menuToggle.addEventListener("click", () => {
+            navMenu.classList.toggle("show");
+            menuToggle.textContent = navMenu.classList.contains("show") ? "✖" : "☰";
+        });
+    });
+</script>
 
 </body>
 </html>

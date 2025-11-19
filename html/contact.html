@@ -11,8 +11,15 @@
 
 <!-- NAVBAR -->
 <header class="navbar">
-    <a href="homepage.html"><img src="../photos/top_shelf_logo.png" alt="Top Shelf Hockey Logo" class="logo"></a>
-    <ul>
+    <a href="homepage.html">
+        <img src="../photos/top_shelf_logo.png" alt="Top Shelf Hockey Logo" class="logo">
+    </a>
+
+    <!-- Hamburger Button -->
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+
+    <!-- Nav Links -->
+    <ul class="nav-links">
         <li><a href="homepage.html">Home</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="products.html">Products</a></li>
@@ -53,7 +60,6 @@
                     <textarea id="message" name="message" placeholder="Your message..." rows="6" required></textarea>
                 </div>
 
-
                 <!-- Success message -->
                 <p id="success-message" class="success-message">Message sent successfully!</p>
 
@@ -67,10 +73,11 @@
 <footer class="footer">
     <p>Hours: Mon–Sat 9am–6pm | Closed Sunday</p>
 </footer>
+
+<!-- CONTACT FORM SCRIPT -->
 <script>
     document.getElementById('contact-form').addEventListener('submit', async function (e) {
-        e.preventDefault(); // prevent page reload
-
+        e.preventDefault();
         const form = e.target;
         const successMsg = document.getElementById('success-message');
 
@@ -82,18 +89,28 @@
             });
 
             if (response.ok) {
-                form.reset(); // clear fields
+                form.reset();
                 successMsg.style.display = 'block';
-                // hide after 4 seconds
-                setTimeout(() => {
-                    successMsg.style.display = 'none';
-                }, 4000);
+                setTimeout(() => successMsg.style.display = 'none', 4000);
             } else {
                 alert('There was an issue sending your message. Please try again.');
             }
         } catch (error) {
             alert('Network error. Please try again later.');
         }
+    });
+</script>
+
+<!-- HAMBURGER MENU SCRIPT -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navMenu = document.querySelector(".nav-links");
+
+        menuToggle.addEventListener("click", () => {
+            navMenu.classList.toggle("show");
+            menuToggle.textContent = navMenu.classList.contains("show") ? "✖" : "☰";
+        });
     });
 </script>
 
